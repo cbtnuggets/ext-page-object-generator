@@ -1,0 +1,50 @@
+{
+  "name": "ext-page-object-generator",
+  "version": "2.0.0",
+  "description": "Chrome extension for generating page objects to the webdriver.io specification",
+  "author": "Colin Barrett-Fox",
+  "homepage": "https://github.com/cbtnuggets/ext-page-object-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbtnuggets/ext-page-object-generator.git"
+  },
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "copyStuffAbout": "mkdir -p ./dist && cd ./src/assets && cp ./css/bootstrap.min.css.map background.js popup.* selector.js icon.png manifest.json ../../dist/ && cd ../../",
+    "getBootstrapAssets": "mkdir -p ./src/assets/css/ ./src/assets/font/ && cp ./node_modules/bootstrap/dist/css/bootstrap.min.css* ./src/assets/css/ && cp ./node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.* ./src/assets/font/",
+    "postinstall": "npm run getBootstrapAssets",
+    "prod": "webpack --config webpack.build.config.js",
+    "predev": "npm run copyStuffAbout",
+    "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
+    "prebuild": "npm run copyStuffAbout",
+    "build": "webpack --config webpack.build.config.js",
+    "prepackage": "npm run copyStuffAbout",
+    "package": "webpack --config webpack.build.config.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "babili-webpack-plugin": "^0.1.2",
+    "bootstrap": "^3.3.7",
+    "css-loader": "^0.28.1",
+    "eslint": "^3.19.0",
+    "eslint-config-cbtnuggets": "^6.0.1",
+    "eslint-plugin-class-property": "^1.0.6",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.10.3",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.28.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "react-bootstrap": "^0.31.0"
+  }
+}

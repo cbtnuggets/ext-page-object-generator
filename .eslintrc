@@ -1,0 +1,17 @@
+{
+    "env": {
+        "node": true,
+        "es6": true,
+        "mocha": true,
+        "browser": true
+    },
+    "extends": "cbtnuggets/rules/react",
+    "ecmaFeatures": {
+        "arrowFunctions": true,
+        "blockBindings": true,
+        "classes": true,
+        "ecmascript": 6,
+        "forOf": true,
+        "allowTemplateLiterals": true
+    }
+}
