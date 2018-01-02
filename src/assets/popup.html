@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Setup Page Object</title>
+    <style>
+    body {
+      overflow: hidden;
+      margin: 0px;
+      padding: 0px;
+      background: white;
+    }
+    div:first-child {
+      margin-top: 0px;
+    }
+    div {
+      cursor: pointer;
+      text-align: center;
+      padding: 1px 3px;
+      font-family: sans-serif;
+      font-size: 0.8em;
+      width: 500px;
+      margin-top: 1px;
+      background: #cccccc;
+    }
+    #attach,
+    #flush {
+      font-size: 16px;
+    }
+    #object-container {
+      background: white;
+      margin: 0;
+      padding: 0;
+    }
+    #attach:hover,
+    #flush:hover {
+      background: #aaaaaa;
+    }
+    #page-object-text {
+      width: 100%;
+      margin: 0;
+    }
+    textarea {
+      height: 250px;
+    }
+    </style>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div id="attach">Attach</div>
+    <div id="object-container">
+      <textarea id="page-object-text" disabled="true"></textarea>
+    </div>
+    <div id="flush" style="color: red">Flush</div>
+  </body>
+</html>

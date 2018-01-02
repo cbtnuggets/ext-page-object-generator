@@ -1,0 +1,24 @@
+{
+  "name": "Page Object Generator",
+  "description": "Attach to a page, converts clicks to selectors and page objects",
+  "version": "2.0",
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "browser_action": {
+      "default_title": "Grab selectors react",
+      "default_icon": "icon.png",
+      "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["selector.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "manifest_version": 2
+}

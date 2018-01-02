@@ -1,37 +1,39 @@
-import '../assets/css/App.css';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Button, Table, FormGroup, FormControl } from 'react-bootstrap';
-class ElementForm extends React.Component {
+import '../assets/css/App.css';
+
+class ElementForm extends Component {
     constructor() {
-        super()
-        this.append = this.append.bind(this)
+        super();
+        this.append = this.append.bind(this);
     }
     append(string, id) {
-      return string + id
+      return string + id;
     }
     render() {
       const elements = this.props.elements.map((e, i) => (
         <tr key={i}>
         <td><FormControl
-            type='text'
+            type="text"
             id={this.append('element-name-', i)}
             value={e.name}
-            placeholder='Key'
+            placeholder="Key"
             onChange={this.props.handleChange}
-          /></td>
+        /></td>
         <td><FormControl
-            type='text'
+            type="text"
             id={this.append('element-selector-', i)}
             value={e.selector}
             placeholder="Selector"
             onChange={this.props.handleChange}
-          /></td>
+        /></td>
         <td><Button id={this.append('delete-element-', i)} onClick={this.props.handleDeleteClick}>
-          <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
-        </Button></td>
+                <span className="glyphicon glyphicon-trash" aria-hidden="true" />
+            </Button>
+        </td>
       </tr>
-      ))
-      return(
+      ));
+      return (
         <form>
           <FormGroup>
             <Table>
@@ -40,7 +42,7 @@ class ElementForm extends React.Component {
               </tbody>
             </Table>
           </FormGroup>
-        </form>)
+        </form>);
     }
 }
 
