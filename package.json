@@ -1,6 +1,6 @@
 {
   "name": "ext-page-object-generator",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Chrome extension for generating page objects to the webdriver.io specification",
   "author": "Colin Barrett-Fox",
   "homepage": "https://github.com/cbtnuggets/ext-page-object-generator",
@@ -27,7 +27,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-react": "^6.24.1",
     "babili-webpack-plugin": "^0.1.2",
-    "bootstrap": "^3.3.7",
+    "bootstrap": ">=4.1.2",
     "css-loader": "^0.28.1",
     "eslint": "^3.19.0",
     "eslint-config-cbtnuggets": "^6.0.1",
